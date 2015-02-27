@@ -14,10 +14,32 @@ public class Manzana extends Producto {
 	}
 	public Manzana(Scanner sc){
 		super(sc);
-		System.out.println("tipo de manzana? (delicious-golden-red):");
-		this.setTipo(sc.next());
-		System.out.println("color de la manzana?");
-		this.setColor(sc.next());
+		do{	
+			System.out.println("tipo de manzana? (delicious-golden-red):");
+			try{
+				this.setTipo(sc.next());
+			}catch(Exception e){
+				System.out.println("erro" + e);
+			}
+		}while (tipo == null);	
+			System.out.println("color de la manzana?");
+			this.setColor(sc.next());
+		
+		
+	}
+	 public void setTipo(String tipo) throws Exception {
+		 switch (tipo){
+			 case "DELICIOUS":
+			 case "delicious":
+			 case "GOLDEN":
+			 case "golden":
+			 case "RED":
+			 case "red":
+			 this.tipo = tipo;
+			 break;
+			 default:
+			 throw new Exception("Tipos de manzana permitidos: DELICIOUS, GOLDEN, RED");
+		 }
 	}
 //-------------getters-------------
 		public String getTipo(){
@@ -28,9 +50,7 @@ public class Manzana extends Producto {
 			return this.color;
 		}
 //-------------setters----------------
-		public void setTipo (String tipo){
-			this.tipo = tipo;
-		}
+		
 		public void setColor (String color){
 			this.color = color;
 		}		

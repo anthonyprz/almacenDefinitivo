@@ -21,13 +21,13 @@ public class Productos {
 					listaProductos.add(manzana);
 					break;
 			case 2: 
-				//	Leche leche = new Leche(sc);
-			   //	listaProductos.add(leche);
-			  //    break;
+					Leche leche = new Leche(sc);
+			    	listaProductos.add(leche);
+			        break;
 			case 3:
-				//	Lechuga lechuga = new Lechuga(sc);
-			   //	listaProductos.add(lechuga);
-			  //    break;
+					Lechuga lechuga = new Lechuga(sc);
+			   	    listaProductos.add(lechuga);
+			        break;
 			default:
 					System.out.println("no has insertado una opcion correcta");
 					break;
